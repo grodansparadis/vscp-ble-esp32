@@ -1,3 +1,4 @@
+
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -22,25 +23,37 @@
 
 #include <stdbool.h>
 #include "nimble/ble.h"
-#include "modlog/modlog.h"
+//#include "modlog/modlog.h"
+
+/* Includes */
+/* NimBLE GAP APIs */
+#include "services/gap/ble_svc_gap.h"
+
 #include "esp_peripheral.h"
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+/* Defines */
+#define BLE_GAP_APPEARANCE_GENERIC_TAG 0x0200
+#define BLE_GAP_URI_PREFIX_HTTPS       0x17
+#define BLE_GAP_LE_ROLE_PERIPHERAL     0x00
+
 struct ble_hs_cfg;
 struct ble_gatt_register_ctxt;
 
 /** GATT server. */
-#define GATT_SVR_SVC_ALERT_UUID               0x1811
-#define GATT_SVR_CHR_SUP_NEW_ALERT_CAT_UUID   0x2A47
-#define GATT_SVR_CHR_NEW_ALERT                0x2A46
-#define GATT_SVR_CHR_SUP_UNR_ALERT_CAT_UUID   0x2A48
-#define GATT_SVR_CHR_UNR_ALERT_STAT_UUID      0x2A45
-#define GATT_SVR_CHR_ALERT_NOT_CTRL_PT        0x2A44
+#define GATT_SVR_SVC_ALERT_UUID             0x1811
+#define GATT_SVR_CHR_SUP_NEW_ALERT_CAT_UUID 0x2A47
+#define GATT_SVR_CHR_NEW_ALERT              0x2A46
+#define GATT_SVR_CHR_SUP_UNR_ALERT_CAT_UUID 0x2A48
+#define GATT_SVR_CHR_UNR_ALERT_STAT_UUID    0x2A45
+#define GATT_SVR_CHR_ALERT_NOT_CTRL_PT      0x2A44
 
-void gatt_svr_register_cb(struct ble_gatt_register_ctxt *ctxt, void *arg);
-int gatt_svr_init(void);
+void
+gatt_svr_register_cb(struct ble_gatt_register_ctxt *ctxt, void *arg);
+int
+gatt_svr_init(void);
 
 #ifdef __cplusplus
 }

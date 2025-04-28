@@ -1,0 +1,4 @@
+{
+  "idf.flashType": "UART",
+  "chat.agent.enabled": true,
+}
