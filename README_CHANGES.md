@@ -7,6 +7,7 @@ tagged, rename **Unreleased** to the version and date, and start a new
 
 ## Unreleased
 
+- Fetch vscp-firmware with CMake FetchContent instead of the third-party/vscp-firmware submodule (same commit)
 - Pause this test (41b55d8)
 - Initial code (e080d88)
 - Initial commit (6135fde)

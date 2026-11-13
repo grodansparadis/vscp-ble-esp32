@@ -3,4 +3,4 @@ set(srcs "main.c"
          "vscp-ble.c")
 
 idf_component_register(SRCS "crypto.c" "${srcs}"
-                       INCLUDE_DIRS "." "../third-party/vscp-firmware/common")
+                       INCLUDE_DIRS "." "${VSCP_FIRMWARE_DIR}/common")
